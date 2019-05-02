@@ -786,7 +786,7 @@ void addRemainingDigits (struct Node *t, int *c, struct Node **re)
 
 struct Node * getLastNode (struct Node *list)
 {
-    assert(!list);
+    assert(list);
     
     while (list->next)
     {

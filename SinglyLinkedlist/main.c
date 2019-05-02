@@ -22,6 +22,18 @@ int main(int argc, const char * argv[]) {
     
     testCode_p1();
     
+    testCode_p2();
+    
+    testCode_p3();
+    
+    testCode_p4();
+    
+    testCode_p5();
+    
+    testCode_p6();
+    
+    testCode_p7();
+    
     return 0;
 }
 
@@ -44,7 +56,7 @@ int main(int argc, const char * argv[]) {
 
 void testCode_p1()
 {
-    sprint(test creation of list and return list length \n);
+    sprint(test case: Creation of list and return list length \n);
     struct Node* ll;
     dataType data = 1;
     int ll_len = 0;
@@ -59,7 +71,7 @@ void testCode_p1()
 
 void testCode_p2()
 {
-    sprint(test creation of list and insert element at beginning of list);
+    sprint(test case: Creation of list and insert element at beginning of list);
     struct Node* ll;
     dataType data = 1;
     int ll_len = 0;
@@ -82,7 +94,7 @@ void testCode_p2()
 
 void testCode_p3()
 {
-    sprint(test creation of list and insert element at position of list);
+    sprint(test case: Creation of list and insert element at position of list);
     sprint(beginning of list = 0; end of list = -1);
     struct Node* ll;
     dataType data = 1;
@@ -114,7 +126,7 @@ void testCode_p3()
 
 void testCode_p4()
 {
-    sprint(test creation of list and delete Node in list by position);
+    sprint(test case: Creation of list and delete Node in list by position);
     sprint(beginning of list = 0; end of list = -1);
     struct Node* ll;
     dataType data = 1;
@@ -164,7 +176,7 @@ void testCode_p4()
 
 void testCode_p5()
 {
-    sprint(test reverse singly linked list);
+    sprint(test case: reverse singly linked list);
     struct Node* ll;
     dataType data = 1;
     int pos = -1;
@@ -199,7 +211,7 @@ void testCode_p5()
 
 void testCode_p6()
 {
-    sprint(Get Nth Node from end of list);
+    sprint(test case: get Nth Node from end of list);
     struct Node* ll;
     dataType data_values[20] = {1,   2,  3,  4,  5,  6,  7,  8,  9, 10,
                                 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
@@ -234,7 +246,7 @@ void testCode_p6()
 
 void testCode_p7()
 {
-    sprint(Test if loop exists in list if so find the first node in loop);
+    sprint(test case: test if loop exists in list if so find the first node in loop);
     struct Node* ll;
     dataType data_values[20] = {1,   2,  3,  4,  5,  6,  7,  8,  9, 10,
         11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };

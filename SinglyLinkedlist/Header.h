@@ -37,6 +37,12 @@ void reverseKNodes(struct Node * list, int k, int length);
 
 // Test code
 void testCode_p1(void);
+void testCode_p2(void);
+void testCode_p3(void);
+void testCode_p4(void);
+void testCode_p5(void);
+void testCode_p6(void);
+void testCode_p7(void);
 
 
 
