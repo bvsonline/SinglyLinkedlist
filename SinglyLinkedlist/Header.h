@@ -35,5 +35,9 @@ void printLinkedlist(struct Node *list);
 struct Node * GetKPlusOnethNode(struct Node *head, int k);
 void reverseKNodes(struct Node * list, int k, int length);
 
+// Test code
+void testCode_p1(void);
+
+
 
 #endif /* Header_h */

@@ -20,6 +20,8 @@ int main(int argc, const char * argv[]) {
     // insert code here...
     printf("Hello, World!\n");
     
+    testCode_p1();
+    
     return 0;
 }
 
@@ -42,7 +44,7 @@ int main(int argc, const char * argv[]) {
 
 void testCode_p1()
 {
-    sprint(test creation of list and return list length);
+    sprint(test creation of list and return list length \n);
     struct Node* ll;
     dataType data = 1;
     int ll_len = 0;

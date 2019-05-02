@@ -30,7 +30,7 @@ void printLinkedlist(struct Node *list)
     }
     else
     {
-        printf("List elements ");
+        printf("List elements \n");
         while (list != NULL)
         {
             printf("%d --> ", list->data);
