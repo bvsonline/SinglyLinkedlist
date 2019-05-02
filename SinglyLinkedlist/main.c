@@ -229,3 +229,50 @@ void testCode_p6()
     
     DeleteLinkedList(ll);
 }
+
+void testCode_p7()
+{
+    sprint(Get Nth Node from end of list);
+    struct Node* ll;
+    dataType data_values[20] = {1,   2,  3,  4,  5,  6,  7,  8,  9, 10,
+        11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
+    dataType *data = data_values;
+    
+    int pos = -1;
+    ll = create_LinkedList(*data++);
+    print_ll(ll);
+    
+    sprint(insert new element at head of list);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    
+    struct Node * nth_node = NthNodeFromEndOfList(ll, 6);
+    print_ll(nth_node);
+    
+    struct Node * last_node = getLastNode(ll);
+    
+    last_node->next = nth_node;
+    
+    int is_loop_in_list = DoesLinkedListHasLoop(ll);
+    dprint(is loop exist in ll, is_loop_in_list);
+    
+    if (is_loop_in_list)
+    {
+        last_node->next = NULL;
+    }
+    DeleteLinkedList(ll);
+    
+}

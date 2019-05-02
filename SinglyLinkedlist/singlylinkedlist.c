@@ -783,3 +783,15 @@ void addRemainingDigits (struct Node *t, int *c, struct Node **re)
     r->next = *re;
     *re = r;
 }
+
+struct Node * getLastNode (struct Node *list)
+{
+    assert(!list);
+    
+    while (list->next)
+    {
+        list = list->next;
+    }
+    
+    return list;
+}

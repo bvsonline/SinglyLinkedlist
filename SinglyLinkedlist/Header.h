@@ -24,6 +24,10 @@ struct Node * DeleteNodeAtPositionInList(struct Node *list, int pos);
 struct Node * DeleteLinkedList(struct Node * list);
 struct Node * ReverseSinglyLinkedList(struct Node *list);
 struct Node * NthNodeFromEndOfList(struct Node *list, int n_Node);
+int DoesLinkedListHasLoop(struct Node *list);
+struct Node * getLastNode (struct Node *list);
+
+
 int find_list_length(struct Node *list);
 void printLinkedlist(struct Node *list);
 struct Node * GetKPlusOnethNode(struct Node *head, int k);
