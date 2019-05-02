@@ -293,6 +293,7 @@ void testCode_p7()
     {
         last_node->next = NULL;
     }
+    
     DeleteLinkedList(ll);
     
 }
