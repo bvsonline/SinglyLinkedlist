@@ -499,34 +499,66 @@ void SplitCircularList(struct Node *head, struct Node **cList1, struct Node **cL
 // for K=2, Output: 2 1 4 3 6 5 8 7 9
 // for K=3, Output: 3 2 1 6 5 4 9 8 7
 // for K=4, Output: 4 3 2 1 8 7 6 5 9
-struct Node * ReverseBlockOfKNodes(struct Node *list, int k)
+struct Node * reverseBlocksOfLinkedList(struct Node * list, int k)
 {
-    // find the length of list
-    int length = find_list_length(list);
+    struct Node *new_head, *curr, *next_block_head, *prev_block_head;
     
-    if (length < k)
+    if ((k==0) || (k==1))
     {
-        // reverse isn't possible
         return list;
     }
     
-    struct Node * newHead = GetKPlusOnethNode(list, k-1);
+    int len_ll = find_list_length(list);
+    if (len_ll < k)
+    {
+        sprint(block size is bigger than length of linked list);
+        return list;
+    }
+    new_head = getNthNode(list, k-1);
+    next_block_head = getNthNode(list, k);
+    int t_iter = len_ll/k;
+    curr = list;
     
-    reverseKNodes(list, k, length);
+    while (t_iter)
+    {
+        prev_block_head = reverse_a_single_block(curr, next_block_head, k);
+        curr->next = getNthNode(next_block_head, k-1);
+        curr = next_block_head;
+        next_block_head = getNthNode(next_block_head, k);
+        t_iter --;
+    }
     
-    return newHead;
-    
+    return new_head;
 }
 
-struct Node * GetKPlusOnethNode(struct Node *head, int k)
+struct Node * reverse_a_single_block(struct Node * list, struct Node * next_head, int k)
 {
-    while (k)
+    struct Node * nextNode;
+    
+    while (list && k)
     {
-        head = head->next;
+        nextNode = list->next;
+        list->next = next_head;
+        next_head = list;
+        list = nextNode;
         k--;
     }
     
-    return head;
+    return next_head;
+}
+
+struct Node * getNthNode(struct Node * list, int k)
+{
+    struct Node *curr = list;
+    while (k && list)
+    {
+        list = list->next;
+        k--;
+    }
+    if (!k)
+        return  list;
+    else
+        return curr;
 }
 
 
@@ -540,29 +572,6 @@ int LengthOfList(struct Node *listHead)
     }
     
     return length;
-}
-
-void reverseKNodes(struct Node * list, int k, int length)
-{
-    struct Node * current = list, *nextNode = NULL, *prev = NULL;
-    int t_iter = length/k, temp_k = k;
-    
-    while (t_iter)
-    {
-        prev = GetKPlusOnethNode(current, temp_k);
-        while (temp_k)
-        {
-            nextNode = current->next;
-            current->next = prev;
-            prev = current;
-            current = nextNode;
-            temp_k--;
-        }
-
-        temp_k = k;
-        t_iter--;
-
-    }
 }
 
 //  Given a linked list with even and odd numbers, create an algorithm for making

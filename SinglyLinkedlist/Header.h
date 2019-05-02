@@ -9,6 +9,10 @@
 #ifndef Header_h
 #define Header_h
 
+#define sprint(expr)          printf(#expr)
+#define dprint(expr, val)     printf(#expr": %d \n", val)
+#define print_ll(val)         printLinkedlist(val)
+
 typedef int dataType;
 
 struct Node
@@ -30,10 +34,12 @@ struct Node *FindStartNodeOftheLoop(struct Node *list);
 int CountNumberOfNodesInLoop(struct Node *list);
 
 
+struct Node * getNthNode(struct Node * list, int k);
+struct Node * reverse_a_single_block(struct Node * list, struct Node * next_head, int k);
+struct Node * reverseBlocksOfLinkedList(struct Node * list, int k);
 int find_list_length(struct Node *list);
 void printLinkedlist(struct Node *list);
-struct Node * GetKPlusOnethNode(struct Node *head, int k);
-void reverseKNodes(struct Node * list, int k, int length);
+
 
 // Test code
 void testCode_p1(void);
@@ -43,6 +49,7 @@ void testCode_p4(void);
 void testCode_p5(void);
 void testCode_p6(void);
 void testCode_p7(void);
+void testCode_p8(void);
 
 
 

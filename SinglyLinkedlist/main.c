@@ -11,11 +11,6 @@
 #include <assert.h>
 #include "Header.h"
 
-
-#define sprint(expr)          printf(#expr)
-#define dprint(expr, val)     printf(#expr": %d \n", val)
-#define print_ll(val)         printLinkedlist(val)
-
 int main(int argc, const char * argv[]) {
     // insert code here...
     printf("Hello, World!\n");
@@ -33,6 +28,8 @@ int main(int argc, const char * argv[]) {
     testCode_p6();
     
     testCode_p7();
+    
+    testCode_p8();
     
     return 0;
 }
@@ -293,6 +290,45 @@ void testCode_p7()
     {
         last_node->next = NULL;
     }
+    
+    DeleteLinkedList(ll);
+    
+}
+
+void testCode_p8()
+{
+    sprint(test case: reverse block of k nodes in list of length n; k <= n);
+    struct Node* ll;
+    dataType data_values[20] = {1,   2,  3,  4,  5,  6,  7,  8,  9, 10,
+        11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
+    dataType *data = data_values;
+    
+    int pos = -1;
+    ll = create_LinkedList(*data++);
+    print_ll(ll);
+    
+    sprint(insert new element at head of list);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    
+    print_ll(ll);
+    
+    ll = reverseBlocksOfLinkedList(ll, 4);
+    
+    print_ll(ll);
     
     DeleteLinkedList(ll);
     
