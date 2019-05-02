@@ -26,6 +26,8 @@ struct Node * ReverseSinglyLinkedList(struct Node *list);
 struct Node * NthNodeFromEndOfList(struct Node *list, int n_Node);
 int DoesLinkedListHasLoop(struct Node *list);
 struct Node * getLastNode (struct Node *list);
+struct Node *FindStartNodeOftheLoop(struct Node *list);
+int CountNumberOfNodesInLoop(struct Node *list);
 
 
 int find_list_length(struct Node *list);

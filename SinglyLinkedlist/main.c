@@ -232,7 +232,7 @@ void testCode_p6()
 
 void testCode_p7()
 {
-    sprint(Get Nth Node from end of list);
+    sprint(Test if loop exists in list if so find the first node in loop);
     struct Node* ll;
     dataType data_values[20] = {1,   2,  3,  4,  5,  6,  7,  8,  9, 10,
         11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
@@ -268,6 +268,12 @@ void testCode_p7()
     
     int is_loop_in_list = DoesLinkedListHasLoop(ll);
     dprint(is loop exist in ll, is_loop_in_list);
+    
+    FindStartNodeOftheLoop(ll);
+    
+    int nodeCntinLoop = CountNumberOfNodesInLoop(ll);
+    
+    dprint(number of nodes in loop, nodeCntinLoop);
     
     if (is_loop_in_list)
     {
