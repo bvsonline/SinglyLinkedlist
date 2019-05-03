@@ -40,6 +40,9 @@ struct Node * reverseBlocksOfLinkedList(struct Node * list, int k);
 int find_list_length(struct Node *list);
 void printLinkedlist(struct Node *list);
 
+void reverse_list(struct Node *list, struct Node *connect);
+struct Node * ReverseSecondHalfOfList(struct Node *list);
+
 
 // Test code
 void testCode_p1(void);
@@ -50,6 +53,7 @@ void testCode_p5(void);
 void testCode_p6(void);
 void testCode_p7(void);
 void testCode_p8(void);
+void testCode_p9(void);
 
 
 

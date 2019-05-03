@@ -31,6 +31,8 @@ int main(int argc, const char * argv[]) {
     
     testCode_p8();
     
+    testCode_p9();
+    
     return 0;
 }
 
@@ -332,4 +334,42 @@ void testCode_p8()
     
     DeleteLinkedList(ll);
     
+}
+
+void testCode_p9(void)
+{
+    sprint(test case: reverse second half of list \n);
+    struct Node* ll;
+    dataType data_values[20] = {1,   2,  3,  4,  5,  6,  7,  8,  9, 10,
+        11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
+    dataType *data = data_values;
+    
+    int pos = -1;
+    ll = create_LinkedList(*data++);
+    print_ll(ll);
+    
+    sprint(insert new element at head of list);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+    ll = InsertNodeAtPositionInList(ll, *data++, pos);
+  
+    print_ll(ll);
+    
+    ll = ReverseSecondHalfOfList(ll);
+    
+    print_ll(ll);
+    
+    DeleteLinkedList(ll);
 }

@@ -804,3 +804,46 @@ struct Node * getLastNode (struct Node *list)
     
     return list;
 }
+
+// In a given list reverse the second half of list
+// ex: list 1 2 3 4 5 6 7 8 9 10 Output: 1 2 3 4 5 10 9 8 7 6
+// ex: list 1 2 3 4 5 6 7 8 9 Output: 1 2 3 4 5 9 8 7 6
+struct Node * ReverseSecondHalfOfList(struct Node *list)
+{
+    struct Node *slowPtr = list, *fastPtr = list, *connectNode = NULL;
+    
+    assert(list->next);
+    
+    while (slowPtr && fastPtr && fastPtr->next)
+    {
+        connectNode = slowPtr;
+        slowPtr = slowPtr->next;
+        fastPtr = fastPtr->next->next;
+    }
+    if (fastPtr == NULL)
+    {
+        sprint(Even number of nodes \n);
+        reverse_list(slowPtr, connectNode);
+    }
+    else if (fastPtr->next == NULL)
+    {
+        sprint(Odd number of nodes \n);
+        reverse_list(slowPtr->next, connectNode->next);
+    }
+    
+    return list;
+}
+
+void reverse_list(struct Node *list, struct Node *connect)
+{
+    struct Node *nextNode = NULL, *prev=NULL;
+    while (list)
+    {
+        nextNode = list->next;
+        list->next = prev;
+        prev = list;
+        list = nextNode;
+    }
+
+    connect->next = prev;
+}
